@@ -1,0 +1,39 @@
+<ul class="bg-white d-none d-md-block navigation ps-0 text-black-50 fw-bold">
+    <li class="p-3 pointer border-bottom" routerLink="/reservation" routerLinkActive="active-link text-dark">
+        <div>{{ 'navigation.reservation' | translate }}</div>
+        <div class="bg-primary line"></div>
+    </li>
+    <li class="p-3 pointer border-bottom" routerLink="/membership" routerLinkActive="active-link text-dark">
+        <div>{{ 'navigation.membership' | translate }}</div>
+        <div class="bg-primary line"></div>
+    </li>
+    <li class="p-3 pointer" routerLink="/paymentcard" routerLinkActive="active-link text-dark">
+        <div>{{ 'navigation.paymentcard' | translate }}</div>
+        <div class="bg-primary line"></div>
+    </li>
+</ul>
+
+<div class="bg-white fixed-bottom d-md-none navigation-sp">
+    <div class="container px-2 h-100">
+        <ul class="row p-0 text-small mb-0 h-100 text-black-50 fw-bold">
+            <li class="col-4 pointer border-end" routerLink="/reservation" routerLinkActive="active-link text-dark">
+                <div class="d-flex justify-content-center align-items-center h-100">
+                    {{ 'navigation.reservation' | translate }}
+                </div>
+                <div class="bg-primary line"></div>
+            </li>
+            <li class="col-4 pointer border-end" routerLink="/membership" routerLinkActive="active-link text-dark">
+                <div class="d-flex justify-content-center align-items-center h-100">
+                    {{ 'navigation.membership' | translate }}
+                </div>
+                <div class="bg-primary line"></div>
+            </li>
+            <li class="col-4 pointer" routerLink="/paymentcard" routerLinkActive="active-link text-dark">
+                <div class="d-flex justify-content-center align-items-center h-100">
+                    {{ 'navigation.paymentcard' | translate }}
+                </div>
+                <div class="bg-primary line"></div>
+            </li>
+        </ul>
+    </div>
+</div>

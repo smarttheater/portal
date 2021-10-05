@@ -1,0 +1,34 @@
+.navigation {
+    li {
+        position: relative;
+        .line {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 4px;
+        }
+        &.active-link .line {
+            display: block;
+        }
+    }
+}
+
+.navigation-sp {
+    height: 60px;
+    li {
+        position: relative;
+        .line {
+            display: none;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 4px;
+        }
+        &.active-link .line {
+            display: block;
+        }
+    }
+}

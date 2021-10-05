@@ -1,0 +1,5 @@
+<div class="d-flex align-items-center" (click)="click()">
+    <i [class.d-none]="!checked" class="bi bi-check-square me-2 fs-3"></i>
+    <i [class.d-none]="checked" class="bi bi-square pointer me-2 fs-3"></i>
+    <ng-content></ng-content>
+</div>

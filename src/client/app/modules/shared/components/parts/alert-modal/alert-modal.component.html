@@ -1,0 +1,11 @@
+<div class="p-4 scroll-vertical">
+    <div *ngIf="title" class="mb-3 fs-3 text-center">{{ title }}</div>
+    <p class="mb-3 text-md-center" [innerHTML]="body"></p>
+    <div *ngIf="error" class="p-3 mb-3 bg-light-gray select-text">
+        <code>{{ error }}</code>
+    </div>
+    <div class="buttons mx-auto text-center d-grid">
+        <button type="button" class="btn btn-outline-primary btn-block py-3 btn-sm" (click)="modal.hide()">{{
+            'common.close' | translate }}</button>
+    </div>
+</div>

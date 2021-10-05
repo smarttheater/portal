@@ -1,0 +1,15 @@
+<div class="p-4 scroll-vertical">
+    <div class="mb-4">
+        <div class="mb-3 fs-3 text-center">{{ title }}</div>
+        <p class="mb-3 text-md-center" [innerHTML]="body"></p>
+        <div *ngIf="code" class="mb-3 text-md-center">
+            <input type="text" class="form-control w-75 mx-auto" name="code" id="code" [(ngModel)]="input.code">
+        </div>
+    </div>
+    <div class="buttons mx-auto text-center d-grid ">
+        <button type="button" [disabled]="code && code !== input.code" class="btn btn-primary btn-block py-3 mb-3"
+            (click)="close()">{{ 'common.yes' | translate }}</button>
+        <button type="button" class="btn btn-outline-primary btn-block py-3" (click)="modal.hide()">{{ 'common.no' |
+            translate }}</button>
+    </div>
+</div>

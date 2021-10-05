@@ -1,0 +1,14 @@
+<div class="cover" [class.active]="isOpen" (click)="close.emit()"></div>
+
+<div class="menu text-white bg-dark" [class.active]="isOpen">
+    <ul *ngIf="(user | async)?.login" class="ps-0 mb-0">
+        <li *ngIf="isVisible('auth')" class="p-3 border-bottom pointer" (click)="signOut()">
+            <i class="bi bi-box-arrow-right me-2"></i>{{ 'menu.logout' | translate }}
+        </li>
+    </ul>
+    <ul *ngIf="!(user | async)?.login" class="ps-0 mb-0">
+        <li *ngIf="isVisible('auth')" class="p-3 border-bottom pointer" (click)="signIn()">
+            <i class="bi bi-box-arrow-right me-2"></i>{{ 'menu.login' | translate }}
+        </li>
+    </ul>
+</div>

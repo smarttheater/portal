@@ -1,0 +1,30 @@
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins";
+
+.logo {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 3rem;
+    height: 3rem;
+    @include media-breakpoint-down(sm) {
+        width: 2rem;
+        height: 2rem;
+    }
+}
+
+.text-overflow {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    text-overflow: ellipsis;
+}
+
+
+.btn-primary.disabled {
+    opacity: 1 !important;
+    background-color: #666 !important;
+    border-color: #666 !important;
+    color: #EEE !important;
+}

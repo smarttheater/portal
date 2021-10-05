@@ -1,0 +1,24 @@
+@import 'node_modules/bootstrap/scss/functions';
+@import 'node_modules/bootstrap/scss/variables';
+@import 'node_modules/bootstrap/scss/mixins';
+:host {
+    box-sizing: border-box;
+    position: absolute;
+    top: 60px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    @include media-breakpoint-down(md) {
+        bottom: 60px;
+    }
+}
+
+.scroll {
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100%;
+}
+
+.touch {
+    -webkit-overflow-scrolling: touch;
+}

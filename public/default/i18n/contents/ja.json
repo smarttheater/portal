@@ -1,0 +1,78 @@
+{
+    "reservation": {
+        "title": "予約",
+        "read": "予約を確認できます",
+        "next": "",
+        "prev": "",
+        "notfound": "予約がありません",
+        "alert": {
+            "searchMyReservations": "検索に失敗しました"
+        }
+    },
+    "membership": {
+        "title": "メンバーシップ",
+        "read": "メンバーシップを確認できます",
+        "next": "",
+        "prev": "",
+        "notfound": "メンバーシップがありません",
+        "alert": {
+            "searchMyMemberships": "検索に失敗しました"
+        }
+    },
+    "paymentcard": {
+        "title": "ポイントカード",
+        "read": "ポイントカードを確認できます",
+        "next": "",
+        "prev": "",
+        "notfound": "ポイントカードがありません",
+        "alert": {
+            "searchMyMemberships": "検索に失敗しました"
+        }
+    },
+    "purchase": {
+        "reservation" : {
+            "title": "チケット購入",
+            "read": "チケット購入できます",
+            "next": "購入",
+            "prev": ""
+        },
+        "membership" : {
+            "title": "メンバーシップ購入",
+            "read": "メンバーシップ購入すると特典を受けることができます",
+            "next": "購入",
+            "prev": ""
+        },
+        "paymentcard" : {
+            "title": "ポイントカード作成",
+            "read": "ポイントカード作成すると特典を受けることができます",
+            "next": "作成",
+            "prev": ""
+        }
+    },
+    "error": {
+        "title": "エラー",
+        "read": "エラーが発生しました。",
+        "next": "",
+        "prev": "戻る"
+    },
+    "notfound": {
+        "title": "NOT FOUND",
+        "read": "ページが見つかりません。",
+        "next": "",
+        "prev": "戻る"
+    },
+    "maintenance": {
+        "title": "メンテナンス",
+        "read": "メンテナンスの為、インターネットでの販売を停止させていただきます。",
+        "next": "",
+        "prev": "戻る"
+    },
+    "auth": {
+        "signout": {
+            "title": "ログアウト",
+            "read": "ログアウトしました。",
+            "next": "",
+            "prev": "戻る"
+        }
+    }
+}

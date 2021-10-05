@@ -1,0 +1,53 @@
+<div class="bg-white p-3">
+    <div class="mb-2">
+        <p class="fw-bold">{{ paymentcard.typeOfGood.name }}</p>
+    </div>
+    <div class="mb-3">
+        <p class="">{{ 'common.paymentcard.balance' | translate }}</p>
+        <div class="d-flex align-items-center">
+            <p class="fw-bold fs-4 me-2">{{ paymentcard.typeOfGood.paymentAccount?.balance }}</p>
+            <p class="">{{ paymentcard.typeOfGood.paymentAmount?.currency }}</p>
+        </div>
+    </div>
+    <div>
+        <button type="button" class="btn btn-primary" (click)="openDetailModal(detailModal)">
+            {{ 'common.detail' | translate }}
+        </button>
+    </div>
+</div>
+
+
+<ng-template #detailModal>
+    <div class="p-4 scroll-vertical">
+        <div class="mb-2">
+            <p class="fw-bold">{{ paymentcard.typeOfGood.name }}</p>
+        </div>
+        <div class="mb-3">
+            <p class="">{{ 'common.paymentcard.balance' | translate }}</p>
+            <div class="d-flex align-items-center">
+                <p class="fw-bold fs-4 me-2">{{ paymentcard.typeOfGood.paymentAccount?.balance }}</p>
+                <p class="">{{ paymentcard.typeOfGood.paymentAmount?.currency }}</p>
+            </div>
+        </div>
+        <hr class="border-dark-gray">
+        <div class="mb-3">
+            <table class="table table-striped table-bordered text-small">
+                <tbody>
+                    <tr>
+                        <td>{{ 'common.paymentcard.accountNumber' | translate }}</td>
+                        <td>{{ paymentcard.typeOfGood.paymentAccount?.accountNumber }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ 'common.paymentcard.openDate' | translate }}</td>
+                        <td>{{ moment(paymentcard.typeOfGood.paymentAccount?.openDate).format('YYYY/MM/DD HH:mm') }}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+        <button *ngIf="modalRef" type="button" class="btn btn-outline-primary" (click)="modalRef?.hide()">
+            {{ 'common.close' | translate }}
+        </button>
+    </div>
+</ng-template>

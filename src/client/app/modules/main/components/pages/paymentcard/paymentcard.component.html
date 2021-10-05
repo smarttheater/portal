@@ -1,0 +1,31 @@
+<div class="contents-width mx-auto px-3 py-5">
+    <div class="container px-0">
+        <div class="row">
+            <div class="col-12 col-md-4">
+                <div class="sticky-top">
+                    <div class="mb-md-3">
+                        <app-navigation></app-navigation>
+                    </div>
+                    <div class="d-none d-md-block">
+                        <app-purchase-reservation></app-purchase-reservation>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-8">
+                <div class="mb-3 d-md-none">
+                    <app-purchase-reservation></app-purchase-reservation>
+                </div>
+                <div class="mb-4">
+                    <h2 class="fs-3 fw-bold mb-3">{{ 'paymentcard.title' | translate }}</h2>
+                    <p>{{ 'paymentcard.read' | translate }}</p>
+                </div>
+                <div *ngFor="let paymentcard of paymentcards" class="mb-3">
+                    <app-item-paymentcard [paymentcard]="paymentcard"></app-item-paymentcard>
+                </div>
+                <div *ngIf="paymentcards?.length === 0 && (isLoading | async) === false">
+                    <app-purchase-paymentcard></app-purchase-paymentcard>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

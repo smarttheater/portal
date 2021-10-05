@@ -1,0 +1,53 @@
+<div class="bg-white p-3">
+    <div class="mb-2">
+        <p class="fw-bold">{{ membership.typeOfGood.name }}</p>
+    </div>
+    <div class="mb-3">
+        <p *ngIf="isValid" class="text-success d-inline-block fw-bold">
+            {{ 'common.membership.status.valid' | translate }}
+        </p>
+        <p *ngIf="!isValid" class="text-danger d-inline-block fw-bold">
+            {{ 'common.membership.status.expired' | translate }}
+        </p>
+    </div>
+    <div>
+        <button type="button" class="btn btn-primary" (click)="openDetailModal(detailModal)">
+            {{ 'common.detail' | translate }}
+        </button>
+    </div>
+</div>
+
+
+<ng-template #detailModal>
+    <div class="p-4 scroll-vertical">
+        <div class="mb-2">
+            <p class="fw-bold">{{ membership.typeOfGood.name }}</p>
+        </div>
+        <div class="mb-3">
+            <p *ngIf="isValid" class="text-success d-inline-block fw-bold">
+                {{ 'common.membership.status.valid' | translate }}
+            </p>
+            <p *ngIf="!isValid" class="text-danger d-inline-block fw-bold">
+                {{ 'common.membership.status.expired' | translate }}
+            </p>
+        </div>
+        <hr class="border-dark-gray">
+        <div class="mb-3">
+            <table class="table table-striped table-bordered text-small">
+                <tbody>
+                    <tr>
+                        <td>{{ 'common.membership.id' | translate }}</td>
+                        <td>{{ membership.typeOfGood.identifier }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ 'common.membership.dateOfExpiry' | translate }}</td>
+                        <td>{{ moment(membership.typeOfGood.validUntil).format('YYYY/MM/DD HH:mm') }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <button *ngIf="modalRef" type="button" class="btn btn-outline-primary" (click)="modalRef?.hide()">
+            {{ 'common.close' | translate }}
+        </button>
+    </div>
+</ng-template>

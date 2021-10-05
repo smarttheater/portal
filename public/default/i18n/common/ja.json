@@ -1,0 +1,179 @@
+{
+    "form": {
+        "label": {
+            "theaterId": "施設",
+            "posId": "POS",
+            "entranceGateId": "入場ゲート",
+            "printerType": "プリンター",
+            "printerIpAddress": "プリンターIPアドレス",
+            "familyName": "姓（全角カタカナ）",
+            "givenName": "名（全角カタカナ）",
+            "email": "メールアドレス",
+            "telephone": "電話番号",
+            "age": "年齢",
+            "address": "住所",
+            "gender": "性別",
+            "drawer": "ドロワー"
+        },
+        "option": {
+            "unselected": "未選択",
+            "true": "使用する",
+            "false": "使用しない"
+        },
+        "validation": {
+            "required": "未入力です",
+            "maxlength": "{{value}}文字以下で入力してください",
+            "minlength": "{{value}}文字以上で入力してください",
+            "fullKana": "全角カタカナで入力してください",
+            "lowercaseLetters": "半角英小文字で入力してください",
+            "number": "数字で入力してください",
+            "halfSizeAlphanumeric": "半角英数字で入力してください",
+            "email": "形式が正しくありません",
+            "telephone": "形式が正しくありません",
+            "unselected": "未選択です。",
+            "pattern": "形式が正しくありません"
+        },
+        "placeholder": {
+            "printerIpAddress": "0.0.0.0",
+            "familyName": "モーション",
+            "givenName": "ピクチャー",
+            "email": "xxx@ml.smart-theater.com",
+            "telephone": "0362778824",
+            "age": "",
+            "address": "",
+            "gender": "",
+            "cardNumber": "",
+            "cardExpiration": "",
+            "securityCode": "",
+            "holderName": "",
+            "confirmationNumber": "12345"
+        },
+        "description": {
+            "email": "【ドメイン指定受信をご利用の場合について】 <br>※ 携帯電話のドメイン指定受信をされている場合、「@ml.smart-theater.com」を追加設定してください。 <br>※ au(@ezweb.ne.jp)をご利用の場合、上記に加え「なりすまし規制回避リスト」にも「@ml.smart-theater.com」の追加設定をしてください。",
+            "telephone": "※チケット発券の際に必要になります。",
+            "cardNumber": "VISA、Master、JCB、AMEX、DINERS をご利用いただけます。"
+        },
+        "required": "必須"
+    },
+    "menu": {
+        "logout": "ログアウト",
+        "login": "ログイン",
+        "confirm": {
+            "login": "ログインしてよろしいですか。",
+            "logout": "ログアウトしてよろしいですか。"
+        }
+    },
+    "navigation": {
+        "reservation": "予約",
+        "membership": "メンバーシップ",
+        "paymentcard": "ポイントカード"
+    },
+    "process": {
+        "load": "読み込み中です",
+        "action": {
+            "auth": {
+                "CheckLogin": "ログインを確認しています",
+                "Logout": "ログアウトしています"
+            },
+            "OwnerShipInfo": {
+                "searchMyReservations": "予約を検索しています",
+                "searchMyMemberships": "メンバーシップを検索しています",
+                "searchMyPaymentCards": "ポイントカードを検索しています"
+            }
+        }
+    },
+    "footer": {
+        "copyright": "Copyright (c) Motionpicture co.,ltd. All rights reserved."
+    },
+    "common": {
+        "date": {
+            "year": "年",
+            "month": "月",
+            "day": "日",
+            "hour": "時",
+            "minute": "分",
+            "second": "秒"
+        },
+        "id": "ID",
+        "password": "PASSWORD",
+        "duration": "所要時間",
+        "confirmationNumber": "確認番号",
+        "orderNumber": "注文番号",
+        "seller": "販売者",
+        "room": "ルーム",
+        "event": "作品",
+        "startDate": "上映日時",
+        "doorTime": "開場日時",
+        "seat": "座席",
+        "ticket": "チケット",
+        "referenceQuantityValue": "[{{value}}枚]",
+        "referenceQuantityValueAnn": "[{{value}}年]",
+        "referenceQuantityValueDay": "[{{value}}日]",
+        "referenceQuantityValueSec": "[{{value}}秒]",
+        "customer": "購入者",
+        "customerName": "お名前",
+        "familyName": "セイ",
+        "givenName": "メイ",
+        "email": "メールアドレス",
+        "emailDescription": "【ドメイン指定受信をご利用の場合について】 <br>※ 携帯電話のドメイン指定受信をされている場合、「@ml.smart-theater.com」を追加設定してください。 <br>※ au(@ezweb.ne.jp)をご利用の場合、上記に加え「なりすまし規制回避リスト」にも「@ml.smart-theater.com」の追加設定をしてください。",
+        "telephone": "電話番号",
+        "age": "年齢",
+        "address": "住所",
+        "paymentMethod": "決済方法",
+        "price": "金額",
+        "amount": "決済金額",
+        "dubbing": "吹替版",
+        "subtitles": "字幕版",
+        "orderDate": "購入日時",
+        "orderStatus": "注文ステータス",
+        "reservationStatus": "予約ステータス",
+        "additionalTicketText": "予約メモ",
+        "qrcode": "QRコード",
+        "timeLimit": "取引期限",
+        "all": "すべて",
+        "close": "閉じる",
+        "done": "決定",
+        "yes": "はい",
+        "no": "いいえ",
+        "on": "ON",
+        "off": "OFF",
+        "error": "エラー",
+        "confirm": "確認",
+        "complete": "完了",
+        "warning": "警告",
+        "change": "変更",
+        "remove": "削除",
+        "etc": "その他",
+        "edit": "編集",
+        "required": "必須",
+        "additionalProperty": "追加特性",
+        "detail": "詳細",
+        "reservation": {
+            "bookingTime": "予約日時",
+            "reservationNumber": "予約番号",
+            "checkedIn": {
+                "label": "発券",
+                "true": "発券済",
+                "false": "未券済"
+            },
+            "attended": {
+                "label": "入場",
+                "true": "入場済",
+                "false": "未入場"
+            }
+        },
+        "membership": {
+            "id": "ID",
+            "dateOfExpiry": "有効期限",
+            "status": {
+                "valid": "有効",
+                "expired": "期限切れ"
+            }
+        },
+        "paymentcard": {
+            "accountNumber": "口座番号",
+            "balance": "残高",
+            "openDate": "開設日時"
+        }
+    }
+}
