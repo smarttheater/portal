@@ -34,26 +34,17 @@ export class PaymentcardComponent implements OnInit {
         this.isLoading = this.store.pipe(select(reducers.getLoading));
         try {
             const { date } = await this.utilService.getServerTime();
+            const now = moment(date).toDate();
             this.paymentcards = (
                 await this.actionService.ownerShipInfo.searchMyPaymentCards({
-                    limit: 1,
+                    ownedFrom: now,
+                    ownedThrough: now,
                 })
-            )
-                .filter((m) => {
-                    return (
-                        m.typeOfGood.validFrom !== undefined &&
-                        m.typeOfGood.validUntil !== undefined &&
-                        moment(date).isBetween(
-                            moment(m.typeOfGood.validFrom),
-                            moment(m.typeOfGood.validUntil)
-                        )
-                    );
-                })
-                .filter(
-                    (p) =>
-                        p.typeOfGood.paymentAccount?.status ===
-                        factory.chevre.accountStatusType.Opened
-                );
+            ).filter(
+                (p) =>
+                    p.typeOfGood.paymentAccount?.status ===
+                    factory.chevre.accountStatusType.Opened
+            );
         } catch (error) {
             this.utilService.openAlert({
                 title: this.translateService.instant('common.error'),

@@ -38,7 +38,8 @@ export class MembershipComponent implements OnInit {
             this.now = moment(date).toDate();
             this.memberships = (
                 await this.actionService.ownerShipInfo.searchMyMemberships({
-                    // limit: 1,
+                    ownedFrom: this.now,
+                    ownedThrough: this.now,
                 })
             ).filter((m) => {
                 return (

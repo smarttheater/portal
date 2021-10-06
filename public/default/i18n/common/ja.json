@@ -79,6 +79,10 @@
                 "searchMyReservations": "予約を検索しています",
                 "searchMyMemberships": "メンバーシップを検索しています",
                 "searchMyPaymentCards": "ポイントカードを検索しています"
+            },
+            "Product": {
+                "search": "プロダクトを検索しています",
+                "searchOffers": "プロダクトオファーを検索しています"
             }
         }
     },
