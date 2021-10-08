@@ -24,7 +24,7 @@ export class PaymentCardGuardService implements CanActivate {
      */
     public async canActivate(): Promise<boolean> {
         try {
-            const { date } = await this.utilService.getServerTime();
+            const { date } = await this.utilService.getServerTime(true);
             const now = moment(date).toDate();
             const products = await this.actionService.product.search({
                 typeOf: { $eq: factory.product.ProductType.PaymentCard },

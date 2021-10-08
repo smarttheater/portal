@@ -17,6 +17,10 @@ export class ReservationComponent implements OnInit {
     public isLoading: Observable<boolean>;
     public environment = getEnvironment();
     public reservations?: factory.ownershipInfo.IOwnershipInfo<factory.ownershipInfo.IReservationWithDetail>[];
+    public products: (
+        | factory.product.IProduct
+        | factory.service.paymentService.IService
+    )[];
 
     constructor(
         private store: Store<reducers.IState>,
@@ -32,6 +36,15 @@ export class ReservationComponent implements OnInit {
         this.error = this.store.pipe(select(reducers.getError));
         this.isLoading = this.store.pipe(select(reducers.getLoading));
         try {
+            this.products = await this.actionService.product.search({
+                typeOf: {
+                    $in: [
+                        factory.chevre.product.ProductType.EventService,
+                        factory.chevre.product.ProductType.MembershipService,
+                        factory.product.ProductType.PaymentCard,
+                    ],
+                },
+            });
             this.reservations =
                 await this.actionService.ownerShipInfo.searchMyReservations({});
         } catch (error) {

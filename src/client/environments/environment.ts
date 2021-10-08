@@ -87,7 +87,7 @@ const defaultEnvironment: IEnvironment = {
     production: false,
     APP_TITLE: '',
     PRIMARY_COLOR: 'steelblue',
-    STORAGE_NAME: 'MINE-STATE',
+    STORAGE_NAME: 'PORTAL-STATE',
     STORAGE_TYPE: 'sessionStorage',
     BASE_URL: '/reservation',
     LANGUAGE: ['ja'],
@@ -106,8 +106,8 @@ export function getEnvironment(): IEnvironment {
         ...defaultEnvironment,
         STORAGE_NAME:
             getProject().projectId === ''
-                ? 'MINE-STATE'
-                : `${getProject().projectId.toUpperCase()}-MINE-STATE`,
+                ? 'PORTAL-STATE'
+                : `${getProject().projectId.toUpperCase()}-PORTAL-STATE`,
         ...(<any>window).environment,
         production: document.querySelector('body.production') !== null,
     };

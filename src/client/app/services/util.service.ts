@@ -45,10 +45,16 @@ export class UtilService {
     /**
      * サーバータイム取得
      */
-    public async getServerTime() {
+    public async getServerTime(loadind = false) {
+        if (loadind) {
+            this.loadStart({ process: 'load' });
+        }
         const result = await this.http
             .get<{ date: string }>('/api/serverTime')
             .toPromise();
+        if (loadind) {
+            this.loadEnd();
+        }
 
         return result;
     }

@@ -19,6 +19,10 @@ export class MembershipComponent implements OnInit {
     public environment = getEnvironment();
     public memberships?: factory.ownershipInfo.IOwnershipInfo<factory.permit.IPermit>[];
     public now: Date;
+    public products: (
+        | factory.product.IProduct
+        | factory.service.paymentService.IService
+    )[];
 
     constructor(
         private store: Store<reducers.IState>,
@@ -34,7 +38,15 @@ export class MembershipComponent implements OnInit {
         this.error = this.store.pipe(select(reducers.getError));
         this.isLoading = this.store.pipe(select(reducers.getLoading));
         try {
-            const { date } = await this.utilService.getServerTime();
+            this.products = await this.actionService.product.search({
+                typeOf: {
+                    $in: [
+                        factory.chevre.product.ProductType.MembershipService,
+                        factory.product.ProductType.PaymentCard,
+                    ],
+                },
+            });
+            const { date } = await this.utilService.getServerTime(true);
             this.now = moment(date).toDate();
             this.memberships = (
                 await this.actionService.ownerShipInfo.searchMyMemberships({
