@@ -39,6 +39,7 @@ async function main() {
                 : Functions.Util.getProject().projectId
             : params.projectId;
     if (projectId === undefined) {
+        console.error('projectId undefined');
         location.href = '/404.html';
         return;
     }

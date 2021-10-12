@@ -175,9 +175,9 @@
             }
         },
         "paymentcard": {
-            "accountNumber": "口座番号",
+            "accountNumber": "カード番号",
             "balance": "残高",
-            "openDate": "開設日時"
+            "openDate": "発行日時"
         }
     }
 }
