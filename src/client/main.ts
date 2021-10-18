@@ -24,6 +24,11 @@ async function main() {
         redirectUrl?: string;
     }>();
 
+    if (params?.redirectUrl !== undefined) {
+        // リダイレクト先設定
+        Functions.Util.setAuthRedirectUrl(params.redirectUrl);
+    }
+
     // プロジェクト設定
     const space = localStorage.getItem('');
     if (space !== null) {

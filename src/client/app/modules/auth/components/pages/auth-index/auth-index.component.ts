@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Functions } from '../../../../..';
 import { getEnvironment } from '../../../../../../environments/environment';
 import { ActionService } from '../../../../../services';
 import { CinerinoService } from '../../../../../services/cinerino.service';
@@ -22,9 +23,15 @@ export class AuthIndexComponent implements OnInit {
         try {
             await this.cinerino.getServices();
             this.actionService.user.initialize({ login: true });
-            this.router.navigate([this.environment.BASE_URL]);
         } catch (error) {
             await this.cinerino.signIn();
         }
+        const url = Functions.Util.getAuthRedirectUrl();
+        Functions.Util.removeAuthRedirectUrl();
+        if (url === undefined) {
+            this.router.navigate([this.environment.BASE_URL]);
+            return;
+        }
+        location.href = url;
     }
 }

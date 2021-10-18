@@ -27,16 +27,12 @@ export class AuthSigninComponent implements OnInit {
         this.isLoading = this.store.pipe(select(reducers.getLoading));
         this.utilService.loadStart({ process: 'load' });
         this.actionService.user.initialize({ login: true });
-        try {
-            const url = Functions.Util.getAuthRedirectUrl();
-            Functions.Util.removeAuthRedirectUrl();
-            if (url === undefined) {
-                this.router.navigate([this.environment.BASE_URL]);
-                return;
-            }
-            location.href = url;
-        } catch (error) {
-            this.router.navigate(['/error']);
+        const url = Functions.Util.getAuthRedirectUrl();
+        Functions.Util.removeAuthRedirectUrl();
+        if (url === undefined) {
+            this.router.navigate([this.environment.BASE_URL]);
+            return;
         }
+        location.href = url;
     }
 }

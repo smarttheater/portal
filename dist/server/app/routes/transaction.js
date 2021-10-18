@@ -36,8 +36,13 @@ router.get('/projects/:projectId/transaction/event', (req, res) => __awaiter(voi
         theaterBranchCode,
         scheduleDate,
     });
-    log('redirect', `${url}${query.length > 0 ? '?' + query : ''}`);
-    res.redirect(`${url}${query.length > 0 ? '?' + query : ''}`);
+    const redirectUrl = `${url}${query.length > 0 ? '?' + query : ''}`;
+    log('redirectUrl', redirectUrl);
+    if (login === 'true') {
+        res.redirect(`/projects/${projectId}?redirectUrl=${encodeURIComponent(redirectUrl)}`);
+        return;
+    }
+    res.redirect(redirectUrl);
 }));
 /**
  * イベント取引照会
