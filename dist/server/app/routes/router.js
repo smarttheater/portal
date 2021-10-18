@@ -9,6 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.path2Query = void 0;
 /**
  * ルーティング
  */
@@ -18,6 +19,7 @@ const path = require("path");
 const auth2_model_1 = require("../models/auth2/auth2.model");
 const authorize_1 = require("./api/authorize");
 const util_1 = require("./api/util");
+const transaction_1 = require("./transaction");
 const log = debug('application: router');
 exports.default = (app) => {
     app.use((_req, res, next) => {
@@ -42,6 +44,7 @@ exports.default = (app) => {
         }
         next();
     });
+    app.use(transaction_1.transactionRouter);
     app.get('/signIn', (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
         log('signInRedirect');
         try {
@@ -108,3 +111,4 @@ function path2Query(req) {
     }
     return result;
 }
+exports.path2Query = path2Query;

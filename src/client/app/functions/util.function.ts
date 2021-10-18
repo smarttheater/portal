@@ -284,3 +284,25 @@ export async function isFile(url: string) {
 export function deepCopy<T>(obj: any) {
     return <T>JSON.parse(JSON.stringify(obj));
 }
+
+/**
+ * 認証リダイレクト先取得
+ */
+export function getAuthRedirectUrl() {
+    const url = sessionStorage.getItem('AUTH_REDIRECT_URL');
+    return url === null ? undefined : decodeURIComponent(url);
+}
+
+/**
+ * 認証リダイレクト先設定
+ */
+export function setAuthRedirectUrl(value: string) {
+    sessionStorage.setItem('AUTH_REDIRECT_URL', value);
+}
+
+/**
+ * 認証リダイレクト先削除
+ */
+export function removeAuthRedirectUrl() {
+    sessionStorage.removeItem('AUTH_REDIRECT_URL');
+}

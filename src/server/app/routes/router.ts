@@ -8,6 +8,7 @@ import * as path from 'path';
 import { Auth2Model } from '../models/auth2/auth2.model';
 import { authorizeRouter } from './api/authorize';
 import { utilRouter } from './api/util';
+import { transactionRouter } from './transaction';
 const log = debug('application: router');
 
 export default (app: express.Application) => {
@@ -39,6 +40,8 @@ export default (app: express.Application) => {
         }
         next();
     });
+
+    app.use(transactionRouter);
 
     app.get('/signIn', async (req, res, next) => {
         log('signInRedirect');
@@ -109,7 +112,7 @@ export default (app: express.Application) => {
 /**
  * パスパラメータをクエリへ変換
  */
-function path2Query(req: express.Request) {
+export function path2Query(req: express.Request) {
     let result = `projectId=${req.params.projectId}`;
     const query = req.url.split('?')[1];
     if (query !== undefined) {

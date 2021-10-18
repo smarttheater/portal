@@ -32,10 +32,8 @@ export class PaymentCardGuardService implements CanActivate {
                     $elemMatch: {
                         availabilityStarts: {
                             $lte: now,
-                            // $gte: now,
                         },
                         availabilityEnds: {
-                            // $lte: now,
                             $gte: now,
                         },
                     },

@@ -21,6 +21,7 @@ async function main() {
     // パラメータ設定
     const params = Functions.Util.getParameter<{
         projectId?: string;
+        redirectUrl?: string;
     }>();
 
     // プロジェクト設定
