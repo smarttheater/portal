@@ -46,7 +46,7 @@ async function main() {
             : params.projectId;
     if (projectId === undefined) {
         console.error('projectId undefined');
-        location.href = '/404.html';
+        // location.href = '/404.html';
         return;
     }
     const config = await setProject({ projectId });
